@@ -305,7 +305,7 @@ class DiscoveryClientBasedReactiveLoadBalancer implements ReactorServiceInstance
 	@Override
 	public Mono<Response<ServiceInstance>> choose() {
 		List<ServiceInstance> instances = discoveryClient.getInstances(serviceId);
-		if (instances.size() == 0) {
+		if (instances.isEmpty()) {
 			return Mono.just(new EmptyResponse());
 		}
 		int instanceIdx = this.random.nextInt(instances.size());

@@ -29,7 +29,7 @@ import org.springframework.cloud.context.scope.ScopeCache;
  */
 public class ThreadLocalScopeCache implements ScopeCache {
 
-	private ThreadLocal<ConcurrentMap<String, Object>> data = ThreadLocal.withInitial(ConcurrentHashMap::new);
+	private final ThreadLocal<ConcurrentMap<String, Object>> data = ThreadLocal.withInitial(ConcurrentHashMap::new);
 
 	@Override
 	public Object remove(String name) {

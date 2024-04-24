@@ -62,7 +62,7 @@ public class SimpleReactiveDiscoveryClientAutoConfiguration implements Applicati
 	@Autowired
 	private InetUtils inet;
 
-	private int port = 0;
+	private int port;
 
 	private SimpleReactiveDiscoveryProperties simple = new SimpleReactiveDiscoveryProperties();
 

@@ -35,7 +35,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class BlockingLoadBalancerClientAutoConfigurationTests {
 
-	private ApplicationContextRunner applicationContextRunner = new ApplicationContextRunner()
+	private final ApplicationContextRunner applicationContextRunner = new ApplicationContextRunner()
 			.withConfiguration(AutoConfigurations.of(LoadBalancerAutoConfiguration.class,
 					BlockingLoadBalancerClientAutoConfiguration.class));
 

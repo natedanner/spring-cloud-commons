@@ -26,7 +26,7 @@ import org.springframework.context.ApplicationEvent;
  */
 public class InstancePreRegisteredEvent extends ApplicationEvent {
 
-	private Registration registration;
+	private final Registration registration;
 
 	/**
 	 * Create a new pre registration event.

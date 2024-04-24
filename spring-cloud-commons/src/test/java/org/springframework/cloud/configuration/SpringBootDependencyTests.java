@@ -212,7 +212,7 @@ public class SpringBootDependencyTests {
 			}
 		};
 		versionVerifier.ACCEPTED_VERSIONS.clear();
-		versionVerifier.ACCEPTED_VERSIONS.put("3.0", versionVerifier.is3_2());
+		versionVerifier.ACCEPTED_VERSIONS.put("3.0", versionVerifier.is32());
 
 		VerificationResult verificationResult = versionVerifier.verify();
 
@@ -230,7 +230,7 @@ public class SpringBootDependencyTests {
 			}
 		};
 		versionVerifier.ACCEPTED_VERSIONS.clear();
-		versionVerifier.ACCEPTED_VERSIONS.put("3.0", versionVerifier.is3_2());
+		versionVerifier.ACCEPTED_VERSIONS.put("3.0", versionVerifier.is32());
 
 		VerificationResult verificationResult = versionVerifier.verify();
 

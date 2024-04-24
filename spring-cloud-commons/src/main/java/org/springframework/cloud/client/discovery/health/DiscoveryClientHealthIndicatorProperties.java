@@ -27,7 +27,7 @@ public class DiscoveryClientHealthIndicatorProperties {
 
 	private boolean enabled = true;
 
-	private boolean includeDescription = false;
+	private boolean includeDescription;
 
 	/**
 	 * Whether or not the indicator should use {@link DiscoveryClient#getServices} to

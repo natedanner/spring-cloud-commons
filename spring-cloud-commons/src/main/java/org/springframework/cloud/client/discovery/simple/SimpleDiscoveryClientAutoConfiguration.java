@@ -44,7 +44,7 @@ public class SimpleDiscoveryClientAutoConfiguration implements ApplicationListen
 
 	private InetUtils inet;
 
-	private int port = 0;
+	private int port;
 
 	private SimpleDiscoveryProperties simple = new SimpleDiscoveryProperties();
 

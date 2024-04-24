@@ -36,7 +36,7 @@ import org.springframework.cloud.client.loadbalancer.RetryableRequestContext;
  */
 public class RetryAwareServiceInstanceListSupplier extends DelegatingServiceInstanceListSupplier {
 
-	private final Log LOG = LogFactory.getLog(RetryAwareServiceInstanceListSupplier.class);
+	private final Log log = LogFactory.getLog(RetryAwareServiceInstanceListSupplier.class);
 
 	public RetryAwareServiceInstanceListSupplier(ServiceInstanceListSupplier delegate) {
 		super(delegate);
@@ -65,11 +65,11 @@ public class RetryAwareServiceInstanceListSupplier extends DelegatingServiceInst
 		if (previousServiceInstance != null) {
 			filteredInstances.remove(previousServiceInstance);
 		}
-		if (filteredInstances.size() > 0) {
+		if (!filteredInstances.isEmpty()) {
 			return filteredInstances;
 		}
-		if (LOG.isWarnEnabled()) {
-			LOG.warn(String.format(
+		if (log.isWarnEnabled()) {
+			log.warn(String.format(
 					"No instances found after removing previously used service instance from the search (%s). Returning all found instances.",
 					previousServiceInstance));
 		}

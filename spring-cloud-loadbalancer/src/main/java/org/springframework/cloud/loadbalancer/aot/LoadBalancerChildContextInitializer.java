@@ -64,7 +64,7 @@ public class LoadBalancerChildContextInitializer implements BeanRegistrationAotP
 	@Override
 	public BeanRegistrationAotContribution processAheadOfTime(RegisteredBean registeredBean) {
 		Assert.isInstanceOf(ConfigurableApplicationContext.class, applicationContext);
-		ConfigurableApplicationContext context = ((ConfigurableApplicationContext) applicationContext);
+		ConfigurableApplicationContext context = (ConfigurableApplicationContext) applicationContext;
 		BeanFactory applicationBeanFactory = context.getBeanFactory();
 		if (!(registeredBean.getBeanClass().equals(LoadBalancerClientFactory.class)
 				&& registeredBean.getBeanFactory().equals(applicationBeanFactory))) {

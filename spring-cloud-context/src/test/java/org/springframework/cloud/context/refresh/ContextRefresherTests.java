@@ -50,7 +50,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 
 public class ContextRefresherTests {
 
-	private RefreshScope scope = Mockito.mock(RefreshScope.class);
+	private final RefreshScope scope = Mockito.mock(RefreshScope.class);
 
 	@AfterEach
 	public void close() {

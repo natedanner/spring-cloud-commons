@@ -118,7 +118,7 @@ public class PropertySourceBootstrapConfiguration implements ApplicationListener
 		ConfigurableEnvironment environment = applicationContext.getEnvironment();
 		for (PropertySourceLocator locator : this.propertySourceLocators) {
 			Collection<PropertySource<?>> source = locator.locateCollection(environment);
-			if (source == null || source.size() == 0) {
+			if (source == null || source.isEmpty()) {
 				continue;
 			}
 			List<PropertySource<?>> sourceList = new ArrayList<>();
@@ -307,7 +307,7 @@ public class PropertySourceBootstrapConfiguration implements ApplicationListener
 	}
 
 	private String[] getProfilesForValue(Object property, ConfigurableEnvironment environment) {
-		final String value = (property == null ? null : property.toString());
+		final String value = property == null ? null : property.toString();
 		return property == null ? new String[0] : resolvePlaceholdersInProfiles(value, environment);
 	}
 

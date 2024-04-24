@@ -452,7 +452,7 @@ public class RetryLoadBalancerInterceptorTests {
 
 	static class MyBackOffPolicy implements BackOffPolicy {
 
-		private int backoffAttempts = 0;
+		private int backoffAttempts;
 
 		@Override
 		public BackOffContext start(RetryContext retryContext) {
@@ -477,7 +477,7 @@ public class RetryLoadBalancerInterceptorTests {
 
 	static class MyRetryListener extends RetryListenerSupport {
 
-		private int onError = 0;
+		private int onError;
 
 		@Override
 		public <T, E extends Throwable> void onError(RetryContext retryContext, RetryCallback<T, E> retryCallback,

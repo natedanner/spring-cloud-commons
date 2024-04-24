@@ -148,7 +148,7 @@ public class DefaultLoadBalancerCache extends AbstractValueAdaptingCache {
 
 	@Override
 	public boolean evictIfPresent(Object key) {
-		return (cache.remove(key) != null);
+		return cache.remove(key) != null;
 	}
 
 	@Override

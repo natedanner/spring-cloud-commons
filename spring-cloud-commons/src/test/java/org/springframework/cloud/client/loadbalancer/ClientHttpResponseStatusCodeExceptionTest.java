@@ -52,7 +52,7 @@ public class ClientHttpResponseStatusCodeExceptionTest {
 
 	static class MyClientHttpResponse extends AbstractClientHttpResponse {
 
-		private boolean closed = false;
+		private boolean closed;
 
 		@Override
 		public int getRawStatusCode() {

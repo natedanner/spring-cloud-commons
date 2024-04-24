@@ -29,9 +29,9 @@ import static org.assertj.core.api.BDDAssertions.then;
  */
 public class HostInfoEnvironmentPostProcessorTests {
 
-	private HostInfoEnvironmentPostProcessor processor = new HostInfoEnvironmentPostProcessor();
+	private final HostInfoEnvironmentPostProcessor processor = new HostInfoEnvironmentPostProcessor();
 
-	private ConfigurableEnvironment environment = new StandardEnvironment();
+	private final ConfigurableEnvironment environment = new StandardEnvironment();
 
 	@Test
 	public void hostname() {

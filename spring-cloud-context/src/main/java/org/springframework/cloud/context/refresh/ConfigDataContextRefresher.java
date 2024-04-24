@@ -80,7 +80,7 @@ public class ConfigDataContextRefresher extends ContextRefresher
 		List<String> classNames = SpringFactoriesLoader.loadFactoryNames(EnvironmentPostProcessor.class,
 				getClass().getClassLoader());
 		Instantiator<EnvironmentPostProcessor> instantiator = new Instantiator<>(EnvironmentPostProcessor.class,
-				(parameters) -> {
+				parameters -> {
 					parameters.add(DeferredLogFactory.class, logFactory);
 					parameters.add(Log.class, logFactory::getLog);
 					parameters.add(ConfigurableBootstrapContext.class, bootstrapContext);

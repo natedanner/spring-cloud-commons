@@ -106,7 +106,7 @@ public class AbstractAutoServiceRegistrationTests {
 
 	public static class PreEventListener implements ApplicationListener<InstancePreRegisteredEvent> {
 
-		public boolean wasFired = false;
+		public boolean wasFired;
 
 		public Registration registration;
 
@@ -120,7 +120,7 @@ public class AbstractAutoServiceRegistrationTests {
 
 	public static class PostEventListener implements ApplicationListener<InstanceRegisteredEvent> {
 
-		public boolean wasFired = false;
+		public boolean wasFired;
 
 		public Registration config;
 
@@ -182,9 +182,9 @@ public class AbstractAutoServiceRegistrationTests {
 
 	public static class TestServiceRegistry implements ServiceRegistry<TestRegistration> {
 
-		private boolean registered = false;
+		private boolean registered;
 
-		private boolean deregistered = false;
+		private boolean deregistered;
 
 		@Override
 		public void register(TestRegistration registration) {
@@ -233,7 +233,7 @@ public class AbstractAutoServiceRegistrationTests {
 
 	public static class TestAutoServiceRegistration extends AbstractAutoServiceRegistration<TestRegistration> {
 
-		private int port = 0;
+		private int port;
 
 		public TestAutoServiceRegistration(AutoServiceRegistrationProperties properties) {
 			super(null, properties);

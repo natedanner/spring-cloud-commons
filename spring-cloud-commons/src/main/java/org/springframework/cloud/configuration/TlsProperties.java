@@ -136,7 +136,7 @@ public class TlsProperties {
 		String extension = fileExtensionOf(resource);
 		String type = EXTENSION_STORE_TYPES.get(extension);
 
-		return (type == null) ? DEFAULT_STORE_TYPE : type;
+		return type == null ? DEFAULT_STORE_TYPE : type;
 	}
 
 	private String fileExtensionOf(Resource resource) {

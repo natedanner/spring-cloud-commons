@@ -44,7 +44,7 @@ public class RsaProperties {
 	 * which case "standard" CBC is used instead). Once it is set, do not change it (or
 	 * existing ciphers will not be decryptable).
 	 */
-	private boolean strong = false;
+	private boolean strong;
 
 	/**
 	 * Salt for the random secret used to encrypt cipher text. Once it is set, do not

@@ -71,7 +71,7 @@ public class HealthCheckServiceInstanceListSupplier extends DelegatingServiceIns
 				.onlyIf(repeatContext -> this.healthCheck.getRefetchInstances())
 				.fixedBackoff(healthCheck.getRefetchInstancesInterval());
 		Flux<List<ServiceInstance>> aliveInstancesFlux = Flux.defer(delegate).repeatWhen(aliveInstancesReplayRepeat)
-				.switchMap(serviceInstances -> healthCheckFlux(serviceInstances).map(alive -> List.copyOf(alive)));
+				.switchMap(serviceInstances -> healthCheckFlux(serviceInstances).map(List::copyOf));
 		aliveInstancesReplay = aliveInstancesFlux.delaySubscription(healthCheck.getInitialDelay()).replay(1)
 				.refCount(1);
 	}

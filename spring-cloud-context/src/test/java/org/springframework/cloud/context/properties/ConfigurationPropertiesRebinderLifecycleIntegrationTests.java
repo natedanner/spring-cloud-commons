@@ -89,7 +89,7 @@ public class ConfigurationPropertiesRebinderLifecycleIntegrationTests {
 
 		private String message;
 
-		private int count = 0;
+		private int count;
 
 		public int getCount() {
 			return this.count;

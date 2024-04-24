@@ -46,7 +46,7 @@ public class DiscoveredResource implements RemoteResource {
 
 	private RestOperations restOperations = new RestTemplate();
 
-	private Link link = null;
+	private Link link;
 
 	public DiscoveredResource(ServiceInstanceProvider provider, TraversalDefinition traversal) {
 		this.provider = provider;

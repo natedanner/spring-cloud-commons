@@ -110,7 +110,7 @@ public class ConfigDataMissingEnvironmentPostProcessorTests {
 		assertThat(output).doesNotContain("Error binding spring.config.import");
 	}
 
-	static public class TestConfigDataMissingEnvironmentPostProcessor
+	public static class TestConfigDataMissingEnvironmentPostProcessor
 			extends ConfigDataMissingEnvironmentPostProcessor {
 
 		@Override

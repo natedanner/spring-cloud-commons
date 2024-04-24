@@ -110,9 +110,9 @@ public class AbstractAutoServiceRegistrationMgmtDisabledTests {
 
 	public static class TestServiceRegistry implements ServiceRegistry<TestRegistration> {
 
-		private boolean registered = false;
+		private boolean registered;
 
-		private boolean deregistered = false;
+		private boolean deregistered;
 
 		@Override
 		public void register(TestRegistration registration) {
@@ -161,7 +161,7 @@ public class AbstractAutoServiceRegistrationMgmtDisabledTests {
 
 	public static class TestAutoServiceRegistration extends AbstractAutoServiceRegistration<TestRegistration> {
 
-		private int port = 0;
+		private int port;
 
 		public TestAutoServiceRegistration(AutoServiceRegistrationProperties properties) {
 			super(new TestServiceRegistry(), properties);

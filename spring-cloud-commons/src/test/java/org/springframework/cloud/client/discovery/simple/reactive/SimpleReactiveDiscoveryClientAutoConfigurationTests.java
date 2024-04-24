@@ -34,12 +34,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class SimpleReactiveDiscoveryClientAutoConfigurationTests {
 
-	private ApplicationContextRunner contextRunner = new ApplicationContextRunner().withConfiguration(
+	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner().withConfiguration(
 			AutoConfigurations.of(SimpleReactiveDiscoveryClientAutoConfiguration.class, UtilAutoConfiguration.class));
 
 	@Test
 	public void shouldUseDefaults() {
-		this.contextRunner.run((context) -> {
+		this.contextRunner.run(context -> {
 			ReactiveDiscoveryClient client = context.getBean(ReactiveDiscoveryClient.class);
 			assertThat(client).isNotNull();
 			assertThat(client.getOrder()).isEqualTo(ReactiveDiscoveryClient.DEFAULT_ORDER);
@@ -58,7 +58,7 @@ class SimpleReactiveDiscoveryClientAutoConfigurationTests {
 		this.contextRunner.withUserConfiguration(Configuration.class)
 				.withPropertyValues("spring.application.name=my-service",
 						"spring.cloud.discovery.client.simple.order=1", "server.port=8443")
-				.run((context) -> {
+				.run(context -> {
 					ReactiveDiscoveryClient client = context.getBean(ReactiveDiscoveryClient.class);
 					assertThat(client).isNotNull();
 					assertThat(client.getOrder()).isEqualTo(1);

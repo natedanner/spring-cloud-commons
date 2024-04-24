@@ -39,11 +39,11 @@ public class RefreshScopeHealthIndicatorTests {
 	@SuppressWarnings("unchecked")
 	private ObjectProvider<RefreshScope> scopeProvider = mock(ObjectProvider.class);
 
-	private ConfigurationPropertiesRebinder rebinder = mock(ConfigurationPropertiesRebinder.class);
+	private final ConfigurationPropertiesRebinder rebinder = mock(ConfigurationPropertiesRebinder.class);
 
-	private RefreshScope scope = mock(RefreshScope.class);
+	private final RefreshScope scope = mock(RefreshScope.class);
 
-	private RefreshScopeHealthIndicator indicator = new RefreshScopeHealthIndicator(this.scopeProvider, this.rebinder);
+	private final RefreshScopeHealthIndicator indicator = new RefreshScopeHealthIndicator(this.scopeProvider, this.rebinder);
 
 	@BeforeEach
 	public void init() {

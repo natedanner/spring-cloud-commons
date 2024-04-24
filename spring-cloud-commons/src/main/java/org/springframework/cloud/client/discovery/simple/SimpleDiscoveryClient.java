@@ -33,7 +33,7 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
  */
 public class SimpleDiscoveryClient implements DiscoveryClient {
 
-	private SimpleDiscoveryProperties simpleDiscoveryProperties;
+	private final SimpleDiscoveryProperties simpleDiscoveryProperties;
 
 	public SimpleDiscoveryClient(SimpleDiscoveryProperties simpleDiscoveryProperties) {
 		this.simpleDiscoveryProperties = simpleDiscoveryProperties;

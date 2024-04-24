@@ -25,7 +25,7 @@ import static org.assertj.core.api.BDDAssertions.then;
  */
 public class HeartbeatMonitorTests {
 
-	private HeartbeatMonitor monitor = new HeartbeatMonitor();
+	private final HeartbeatMonitor monitor = new HeartbeatMonitor();
 
 	@Test
 	public void onAndOff() {

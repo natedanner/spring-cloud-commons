@@ -151,7 +151,7 @@ public class ConfigurationPropertiesRebinderIntegrationTests {
 
 		private int delay;
 
-		private int count = 0;
+		private int count;
 
 		public int getCount() {
 			return this.count;

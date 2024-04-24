@@ -38,7 +38,7 @@ import org.springframework.util.StringUtils;
  */
 public class LoadBalancerServiceInstanceCookieTransformer implements LoadBalancerRequestTransformer {
 
-	private ReactiveLoadBalancer.Factory<ServiceInstance> factory;
+	private final ReactiveLoadBalancer.Factory<ServiceInstance> factory;
 
 	public LoadBalancerServiceInstanceCookieTransformer(ReactiveLoadBalancer.Factory<ServiceInstance> factory) {
 		this.factory = factory;

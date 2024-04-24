@@ -48,7 +48,7 @@ public abstract class SpringFactoryImportSelector<T>
 
 	private ClassLoader beanClassLoader;
 
-	private Class<T> annotationClass;
+	private final Class<T> annotationClass;
 
 	private Environment environment;
 

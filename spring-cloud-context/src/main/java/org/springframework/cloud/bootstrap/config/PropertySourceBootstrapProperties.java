@@ -45,12 +45,12 @@ public class PropertySourceBootstrapProperties {
 	 * existing property sources (including local config files). Default false. This will
 	 * only have an effect when using config first bootstrap.
 	 */
-	private boolean overrideNone = false;
+	private boolean overrideNone;
 
 	/**
 	 * Flag to initialize bootstrap configuration on context refresh event. Default false.
 	 */
-	private boolean initializeOnContextRefresh = false;
+	private boolean initializeOnContextRefresh;
 
 	public boolean isInitializeOnContextRefresh() {
 		return initializeOnContextRefresh;

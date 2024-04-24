@@ -59,7 +59,7 @@ public class RequestBasedStickySessionServiceInstanceListSupplier extends Delega
 	public Flux<List<ServiceInstance>> get(Request request) {
 		String instanceIdCookieName = properties.getStickySession().getInstanceIdCookieName();
 		Object context = request.getContext();
-		if ((context instanceof RequestDataContext)) {
+		if (context instanceof RequestDataContext) {
 			MultiValueMap<String, String> cookies = ((RequestDataContext) context).getClientRequest().getCookies();
 			if (cookies == null) {
 				return delegate.get(request);

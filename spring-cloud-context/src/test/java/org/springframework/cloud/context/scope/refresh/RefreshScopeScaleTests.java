@@ -106,9 +106,9 @@ public class RefreshScopeScaleTests {
 
 		private static volatile int count;
 
-		private String message = null;
+		private String message;
 
-		private volatile long delay = 0;
+		private volatile long delay;
 
 		public void setDelay(long delay) {
 			this.delay = delay;

@@ -43,7 +43,7 @@ public class DiscoveryClientHealthIndicator
 
 	private final Log log = LogFactory.getLog(DiscoveryClientHealthIndicator.class);
 
-	private AtomicBoolean discoveryInitialized = new AtomicBoolean(false);
+	private final AtomicBoolean discoveryInitialized = new AtomicBoolean(false);
 
 	private int order = Ordered.HIGHEST_PRECEDENCE;
 
@@ -67,7 +67,7 @@ public class DiscoveryClientHealthIndicator
 		if (this.discoveryInitialized.get()) {
 			try {
 				DiscoveryClient client = this.discoveryClient.getIfAvailable();
-				String description = (this.properties.isIncludeDescription()) ? client.description() : "";
+				String description = this.properties.isIncludeDescription() ? client.description() : "";
 
 				if (properties.isUseServicesQuery()) {
 					List<String> services = client.getServices();

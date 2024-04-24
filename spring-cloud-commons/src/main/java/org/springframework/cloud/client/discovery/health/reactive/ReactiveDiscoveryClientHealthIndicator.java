@@ -48,7 +48,7 @@ public class ReactiveDiscoveryClientHealthIndicator
 
 	private final DiscoveryClientHealthIndicatorProperties properties;
 
-	private AtomicBoolean discoveryInitialized = new AtomicBoolean(false);
+	private final AtomicBoolean discoveryInitialized = new AtomicBoolean(false);
 
 	private int order = Ordered.HIGHEST_PRECEDENCE;
 
@@ -98,7 +98,7 @@ public class ReactiveDiscoveryClientHealthIndicator
 	}
 
 	private Mono<Health> buildHealthUp(ReactiveDiscoveryClient discoveryClient) {
-		String description = (properties.isIncludeDescription()) ? discoveryClient.description() : "";
+		String description = properties.isIncludeDescription() ? discoveryClient.description() : "";
 		return Mono.just(Health.status(new Status("UP", description)).build());
 	}
 
@@ -109,7 +109,7 @@ public class ReactiveDiscoveryClientHealthIndicator
 				.collectList()
 				.defaultIfEmpty(emptyList())
 				.map(services -> {
-					String description = (properties.isIncludeDescription()) ?
+					String description = properties.isIncludeDescription() ?
 						discoveryClient.description() : "";
 					return Health.status(new Status("UP", description))
 						.withDetail("services", services).build();

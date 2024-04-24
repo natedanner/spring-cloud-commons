@@ -38,7 +38,7 @@ import org.springframework.util.Assert;
  */
 public class DiscoveryCompositeHealthContributor implements CompositeHealthContributor {
 
-	private Map<String, DiscoveryHealthIndicator> indicators;
+	private final Map<String, DiscoveryHealthIndicator> indicators;
 
 	public DiscoveryCompositeHealthContributor(Collection<DiscoveryHealthIndicator> indicators) {
 		Assert.notNull(indicators, "'indicators' must not be null");
@@ -73,7 +73,7 @@ public class DiscoveryCompositeHealthContributor implements CompositeHealthContr
 	}
 
 	private HealthIndicator asHealthIndicator(DiscoveryHealthIndicator indicator) {
-		return (indicator != null) ? indicator::health : null;
+		return indicator != null ? indicator::health : null;
 	}
 
 	public Map<String, DiscoveryHealthIndicator> getIndicators() {

@@ -33,12 +33,12 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 class ReactiveCompositeDiscoveryClientAutoConfigurationTests {
 
-	private ApplicationContextRunner contextRunner = new ApplicationContextRunner()
+	private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
 			.withConfiguration(AutoConfigurations.of(ReactiveCompositeDiscoveryClientAutoConfiguration.class));
 
 	@Test
 	public void shouldCreateCompositeReactiveDiscoveryClientWithoutDelegates() {
-		this.contextRunner.run((context) -> {
+		this.contextRunner.run(context -> {
 			ReactiveDiscoveryClient client = context.getBean(ReactiveDiscoveryClient.class);
 			assertThat(client).isNotNull();
 			assertThat(client).isInstanceOf(ReactiveCompositeDiscoveryClient.class);
@@ -48,7 +48,7 @@ class ReactiveCompositeDiscoveryClientAutoConfigurationTests {
 
 	@Test
 	public void shouldCreateCompositeReactiveDiscoveryClientWithDelegate() {
-		this.contextRunner.withUserConfiguration(Configuration.class).run((context) -> {
+		this.contextRunner.withUserConfiguration(Configuration.class).run(context -> {
 			ReactiveDiscoveryClient client = context.getBean(ReactiveDiscoveryClient.class);
 			assertThat(client).isNotNull();
 			assertThat(client).isInstanceOf(ReactiveCompositeDiscoveryClient.class);

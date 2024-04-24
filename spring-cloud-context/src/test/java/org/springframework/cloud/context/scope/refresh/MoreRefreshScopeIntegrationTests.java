@@ -123,13 +123,13 @@ public class MoreRefreshScopeIntegrationTests {
 
 		private static Log logger = LogFactory.getLog(TestService.class);
 
-		private volatile static int initCount = 0;
+		private static volatile int initCount;
 
-		private volatile static int destroyCount = 0;
+		private static volatile int destroyCount;
 
-		private String message = null;
+		private String message;
 
-		private volatile long delay = 0;
+		private volatile long delay;
 
 		public static void reset() {
 			initCount = 0;

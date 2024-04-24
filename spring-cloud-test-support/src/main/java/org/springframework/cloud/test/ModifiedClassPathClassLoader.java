@@ -103,7 +103,7 @@ final class ModifiedClassPathClassLoader extends URLClassLoader {
 		if (annotatedElements.isEmpty()) {
 			return null;
 		}
-		return cache.computeIfAbsent(annotatedElements, (key) -> compute(testClass.getClassLoader(), key));
+		return cache.computeIfAbsent(annotatedElements, key -> compute(testClass.getClassLoader(), key));
 	}
 
 	private static Collection<AnnotatedElement> getAnnotatedElements(Object[] array) {
@@ -128,7 +128,7 @@ final class ModifiedClassPathClassLoader extends URLClassLoader {
 	private static ModifiedClassPathClassLoader compute(ClassLoader classLoader,
 			List<AnnotatedElement> annotatedClasses) {
 		List<MergedAnnotations> annotations = annotatedClasses.stream()
-				.map((source) -> MergedAnnotations.from(source, MergedAnnotations.SearchStrategy.TYPE_HIERARCHY))
+				.map(source -> MergedAnnotations.from(source, MergedAnnotations.SearchStrategy.TYPE_HIERARCHY))
 				.toList();
 		return new ModifiedClassPathClassLoader(processUrls(extractUrls(classLoader), annotations),
 				classLoader.getParent(), classLoader);

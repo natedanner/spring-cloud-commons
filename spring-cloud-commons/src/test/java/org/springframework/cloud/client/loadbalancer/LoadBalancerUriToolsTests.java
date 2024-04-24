@@ -192,7 +192,7 @@ class TestServiceInstance implements ServiceInstance {
 
 	private boolean secure;
 
-	private Map<String, String> metadata = new LinkedHashMap<>();
+	private final Map<String, String> metadata = new LinkedHashMap<>();
 
 	TestServiceInstance withScheme(String scheme) {
 		this.scheme = scheme;
@@ -216,8 +216,7 @@ class TestServiceInstance implements ServiceInstance {
 
 	@Override
 	public String getHost() {
-		String host = "test.example";
-		return host;
+		return "test.example";
 	}
 
 	@Override

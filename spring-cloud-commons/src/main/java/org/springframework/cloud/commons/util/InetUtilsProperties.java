@@ -61,7 +61,7 @@ public class InetUtilsProperties {
 	 * Whether to use only interfaces with site local addresses. See
 	 * {@link InetAddress#isSiteLocalAddress()} for more details.
 	 */
-	private boolean useOnlySiteLocalInterfaces = false;
+	private boolean useOnlySiteLocalInterfaces;
 
 	/**
 	 * List of Java regular expressions for network addresses that will be preferred.

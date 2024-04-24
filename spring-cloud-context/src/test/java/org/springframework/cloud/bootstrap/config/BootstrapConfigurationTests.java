@@ -138,10 +138,9 @@ public class BootstrapConfigurationTests {
 
 	private void bootstrapPropertiesAvailableInInitializer(String... properties) {
 		this.context = new SpringApplicationBuilder().web(WebApplicationType.NONE).properties(properties)
-				.sources(BareConfiguration.class).initializers(applicationContext -> {
+				.sources(BareConfiguration.class).initializers(applicationContext ->
 					// This property is defined in bootstrap.properties
-					then(applicationContext.getEnvironment().getProperty("info.name")).isEqualTo("child");
-				}).run();
+					then(applicationContext.getEnvironment().getProperty("info.name")).isEqualTo("child")).run();
 		then(this.context.getEnvironment().getPropertySources()
 				.contains(PropertySourceBootstrapConfiguration.BOOTSTRAP_PROPERTY_SOURCE_NAME + "-testBootstrap"))
 						.isTrue();
@@ -153,8 +152,7 @@ public class BootstrapConfigurationTests {
 	 * @return external properties resource location
 	 */
 	private String getExternalProperties() {
-		String externalPropertiesPath = "classpath:external-properties/bootstrap.properties";
-		return externalPropertiesPath;
+		return "classpath:external-properties/bootstrap.properties";
 	}
 
 	@Test
@@ -195,7 +193,7 @@ public class BootstrapConfigurationTests {
 			this.context = new SpringApplicationBuilder().web(WebApplicationType.NONE).properties(properties)
 					.sources(BareConfiguration.class).run();
 		});
-		then(throwable.getMessage().equals("Planned"));
+		then("Planned".equals(throwable.getMessage()));
 	}
 
 	@Test
@@ -688,7 +686,7 @@ public class BootstrapConfigurationTests {
 			return new PropertySource("testBootstrapSimple", this) {
 				@Override
 				public Object getProperty(String name) {
-					return ("foo".equals(name)) ? "bar" : null;
+					return "foo".equals(name) ? "bar" : null;
 				}
 			};
 		}
@@ -705,7 +703,7 @@ public class BootstrapConfigurationTests {
 
 		private String name;
 
-		private boolean fail = false;
+		private boolean fail;
 
 		@Override
 		public PropertySource<?> locate(Environment environment) {
@@ -765,7 +763,7 @@ public class BootstrapConfigurationTests {
 
 		private String name;
 
-		private boolean fail = false;
+		private boolean fail;
 
 		@Override
 		public PropertySource<?> locate(Environment environment) {

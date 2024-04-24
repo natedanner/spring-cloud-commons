@@ -40,7 +40,7 @@ import static org.springframework.cloud.bootstrap.TestHigherPriorityBootstrapCon
 @EnableConfigurationProperties
 public class TestBootstrapConfiguration {
 
-	public static List<String> fooSightings = null;
+	public static List<String> fooSightings;
 
 	public TestBootstrapConfiguration() {
 		firstToBeCreated.compareAndSet(null, TestBootstrapConfiguration.class);

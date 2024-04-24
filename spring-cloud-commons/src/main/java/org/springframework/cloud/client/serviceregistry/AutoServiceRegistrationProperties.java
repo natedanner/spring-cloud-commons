@@ -33,7 +33,7 @@ public class AutoServiceRegistrationProperties {
 	/**
 	 * Whether startup fails if there is no AutoServiceRegistration. Defaults to false.
 	 */
-	private boolean failFast = false;
+	private boolean failFast;
 
 	public boolean isEnabled() {
 		return this.enabled;

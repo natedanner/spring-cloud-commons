@@ -84,9 +84,8 @@ public class RefreshEndpointIntegrationTests {
 		property.put("value", value);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-		RequestEntity<Map<String, String>> entity = new RequestEntity<>(property, headers, HttpMethod.POST,
+		return new RequestEntity<>(property, headers, HttpMethod.POST,
 				new URI(uri));
-		return entity;
 	}
 
 	@Configuration(proxyBeanMethods = false)

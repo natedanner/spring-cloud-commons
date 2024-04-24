@@ -165,9 +165,9 @@ class AbstractAutoServiceRegistrationRegistrationLifecycleTests {
 	static class TestRegistrationLifecycleServiceRegistration
 			implements ServiceRegistry<TestRegistrationLifecycleRegistration> {
 
-		private boolean registered = false;
+		private boolean registered;
 
-		private boolean deregistered = false;
+		private boolean deregistered;
 
 		@Override
 		public void register(TestRegistrationLifecycleRegistration registration) {

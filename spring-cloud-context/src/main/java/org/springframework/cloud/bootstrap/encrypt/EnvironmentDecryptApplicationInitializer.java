@@ -53,7 +53,7 @@ public class EnvironmentDecryptApplicationInitializer extends AbstractEnvironmen
 
 	private int order = Ordered.HIGHEST_PRECEDENCE + 15;
 
-	private TextEncryptor encryptor;
+	private final TextEncryptor encryptor;
 
 	public EnvironmentDecryptApplicationInitializer(TextEncryptor encryptor) {
 		this.encryptor = encryptor;

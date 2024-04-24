@@ -33,7 +33,7 @@ import static org.springframework.cloud.bootstrap.config.PropertySourceBootstrap
  */
 public class BootstrapPropertySource<T> extends EnumerablePropertySource<T> {
 
-	private EnumerablePropertySource<T> delegate;
+	private final EnumerablePropertySource<T> delegate;
 
 	public BootstrapPropertySource(EnumerablePropertySource<T> delegate) {
 		super(BOOTSTRAP_PROPERTY_SOURCE_NAME + "-" + delegate.getName(), delegate.getSource());

@@ -136,15 +136,15 @@ public class RefreshScopeIntegrationTests {
 
 		private static Log logger = LogFactory.getLog(ExampleService.class);
 
-		private volatile static int initCount = 0;
+		private static volatile int initCount;
 
-		private volatile static int destroyCount = 0;
+		private static volatile int destroyCount;
 
-		private volatile static RefreshScopeRefreshedEvent event;
+		private static volatile RefreshScopeRefreshedEvent event;
 
-		private String message = null;
+		private String message;
 
-		private volatile long delay = 0;
+		private volatile long delay;
 
 		public static void reset() {
 			initCount = 0;

@@ -135,8 +135,8 @@ public final class ManagementServerPortUtils {
 				// Current context is not a webapp
 				return DIFFERENT;
 			}
-			return ((port == null) || (serverProperties.getPort() == null && port.equals(8080))
-					|| (port != 0 && port.equals(serverProperties.getPort())) ? SAME : DIFFERENT);
+			return (port == null) || (serverProperties.getPort() == null && port.equals(8080))
+					|| (port != 0 && port.equals(serverProperties.getPort())) ? SAME : DIFFERENT;
 		}
 
 	}

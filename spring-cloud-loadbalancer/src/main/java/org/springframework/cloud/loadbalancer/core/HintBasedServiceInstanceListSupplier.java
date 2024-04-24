@@ -91,7 +91,7 @@ public class HintBasedServiceInstanceListSupplier extends DelegatingServiceInsta
 				filteredInstances.add(serviceInstance);
 			}
 		}
-		if (filteredInstances.size() > 0) {
+		if (!filteredInstances.isEmpty()) {
 			return filteredInstances;
 		}
 

@@ -103,9 +103,9 @@ public class RefreshScopeConcurrencyTests {
 
 		private static Log logger = LogFactory.getLog(ExampleService.class);
 
-		private String message = null;
+		private String message;
 
-		private volatile long delay = 0;
+		private volatile long delay;
 
 		public void setDelay(long delay) {
 			this.delay = delay;

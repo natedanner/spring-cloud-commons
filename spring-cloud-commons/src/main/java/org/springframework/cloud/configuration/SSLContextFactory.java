@@ -31,7 +31,7 @@ import org.springframework.core.io.Resource;
 
 public class SSLContextFactory {
 
-	private TlsProperties properties;
+	private final TlsProperties properties;
 
 	public SSLContextFactory(TlsProperties properties) {
 		this.properties = properties;

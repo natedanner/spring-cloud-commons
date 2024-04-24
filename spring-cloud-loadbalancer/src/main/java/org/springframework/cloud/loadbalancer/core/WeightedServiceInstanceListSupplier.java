@@ -82,7 +82,7 @@ public class WeightedServiceInstanceListSupplier extends DelegatingServiceInstan
 	}
 
 	private List<ServiceInstance> expandByWeight(List<ServiceInstance> instances) {
-		if (instances.size() == 0) {
+		if (instances.isEmpty()) {
 			return instances;
 		}
 

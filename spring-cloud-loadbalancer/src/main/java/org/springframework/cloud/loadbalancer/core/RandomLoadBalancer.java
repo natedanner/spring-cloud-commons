@@ -42,7 +42,7 @@ public class RandomLoadBalancer implements ReactorServiceInstanceLoadBalancer {
 
 	private final String serviceId;
 
-	private ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider;
+	private final ObjectProvider<ServiceInstanceListSupplier> serviceInstanceListSupplierProvider;
 
 	/**
 	 * @param serviceInstanceListSupplierProvider a provider of

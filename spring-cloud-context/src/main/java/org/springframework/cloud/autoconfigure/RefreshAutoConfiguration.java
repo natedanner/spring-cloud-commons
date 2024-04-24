@@ -184,7 +184,7 @@ public class RefreshAutoConfiguration {
 
 		private Environment environment;
 
-		private boolean bound = false;
+		private boolean bound;
 
 		/**
 		 * Class names for beans to post process into refresh scope. Useful when you don't

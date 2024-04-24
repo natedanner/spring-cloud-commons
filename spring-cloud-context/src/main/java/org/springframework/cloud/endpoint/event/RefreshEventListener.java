@@ -36,11 +36,11 @@ import org.springframework.context.event.SmartApplicationListener;
  */
 public class RefreshEventListener implements SmartApplicationListener {
 
-	private static Log log = LogFactory.getLog(RefreshEventListener.class);
+	private static final Log log = LogFactory.getLog(RefreshEventListener.class);
 
-	private ContextRefresher refresh;
+	private final ContextRefresher refresh;
 
-	private AtomicBoolean ready = new AtomicBoolean(false);
+	private final AtomicBoolean ready = new AtomicBoolean(false);
 
 	public RefreshEventListener(ContextRefresher refresh) {
 		this.refresh = refresh;

@@ -38,8 +38,7 @@ public class RefreshEndpoint {
 
 	@WriteOperation
 	public Collection<String> refresh() {
-		Set<String> keys = this.contextRefresher.refresh();
-		return keys;
+		return this.contextRefresher.refresh();
 	}
 
 }

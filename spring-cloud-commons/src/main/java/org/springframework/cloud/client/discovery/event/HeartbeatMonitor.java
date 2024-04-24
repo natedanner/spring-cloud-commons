@@ -26,7 +26,7 @@ import java.util.concurrent.atomic.AtomicReference;
  */
 public class HeartbeatMonitor {
 
-	private AtomicReference<Object> latestHeartbeat = new AtomicReference<>();
+	private final AtomicReference<Object> latestHeartbeat = new AtomicReference<>();
 
 	/**
 	 * @param value The latest heartbeat.

@@ -186,7 +186,7 @@ class ReactorLoadBalancerExchangeFilterFunctionTests {
 
 				@Override
 				public <X> Map<String, X> getInstances(String name, Class<X> type) {
-					if (name.equals("serviceWithNoLifecycleProcessors")) {
+					if ("serviceWithNoLifecycleProcessors".equals(name)) {
 						return null;
 					}
 					Map lifecycleProcessors = new HashMap<>();

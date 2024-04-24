@@ -51,8 +51,7 @@ public class RefreshScopeSerializationTests {
 	private DefaultListableBeanFactory getBeanFactory() {
 		ConfigurableApplicationContext context = new SpringApplicationBuilder(TestConfiguration.class)
 				.web(WebApplicationType.NONE).run();
-		DefaultListableBeanFactory factory = (DefaultListableBeanFactory) context.getAutowireCapableBeanFactory();
-		return factory;
+		return (DefaultListableBeanFactory) context.getAutowireCapableBeanFactory();
 	}
 
 	@Configuration(proxyBeanMethods = false)

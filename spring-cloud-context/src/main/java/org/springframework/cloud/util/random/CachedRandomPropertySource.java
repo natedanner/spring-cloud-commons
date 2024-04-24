@@ -75,7 +75,7 @@ public class CachedRandomPropertySource extends PropertySource<PropertySource> {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Looking in random cache for key " + key + " with type " + type);
 		}
-		return randomValueCache.computeIfAbsent(type, (theType) -> {
+		return randomValueCache.computeIfAbsent(type, theType -> {
 			if (logger.isDebugEnabled()) {
 				logger.debug(String.format(
 						"No random value found in cache for key: %s and type: %s, generating a new value", key, type));

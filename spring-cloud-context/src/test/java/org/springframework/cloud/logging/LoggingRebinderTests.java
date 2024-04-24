@@ -39,9 +39,9 @@ import static org.assertj.core.api.BDDAssertions.then;
  */
 public class LoggingRebinderTests {
 
-	private LoggingRebinder rebinder = new LoggingRebinder();
+	private final LoggingRebinder rebinder = new LoggingRebinder();
 
-	private Logger logger = LoggerFactory.getLogger("org.springframework.web");
+	private final Logger logger = LoggerFactory.getLogger("org.springframework.web");
 
 	@AfterEach
 	public void reset() {

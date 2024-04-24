@@ -29,7 +29,7 @@ import org.springframework.cloud.client.discovery.ReactiveDiscoveryClient;
  */
 public class SimpleReactiveDiscoveryClient implements ReactiveDiscoveryClient {
 
-	private SimpleReactiveDiscoveryProperties simpleDiscoveryProperties;
+	private final SimpleReactiveDiscoveryProperties simpleDiscoveryProperties;
 
 	public SimpleReactiveDiscoveryClient(SimpleReactiveDiscoveryProperties simpleDiscoveryProperties) {
 		this.simpleDiscoveryProperties = simpleDiscoveryProperties;

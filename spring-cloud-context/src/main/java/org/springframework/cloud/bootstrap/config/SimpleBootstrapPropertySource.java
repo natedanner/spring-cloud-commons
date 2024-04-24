@@ -27,7 +27,7 @@ import static org.springframework.cloud.bootstrap.config.PropertySourceBootstrap
  */
 public class SimpleBootstrapPropertySource<T> extends PropertySource<T> {
 
-	private PropertySource<T> delegate;
+	private final PropertySource<T> delegate;
 
 	public SimpleBootstrapPropertySource(PropertySource<T> delegate) {
 		super(BOOTSTRAP_PROPERTY_SOURCE_NAME + "-" + delegate.getName(), delegate.getSource());

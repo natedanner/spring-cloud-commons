@@ -34,9 +34,9 @@ public class BlockingLoadBalancedRetryPolicy implements LoadBalancedRetryPolicy 
 
 	private final LoadBalancerProperties properties;
 
-	private int sameServerCount = 0;
+	private int sameServerCount;
 
-	private int nextServerCount = 0;
+	private int nextServerCount;
 
 	public BlockingLoadBalancedRetryPolicy(LoadBalancerProperties properties) {
 		this.properties = properties;

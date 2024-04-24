@@ -47,7 +47,7 @@ public class DefaultsBindHandlerAdvisor implements ConfigurationPropertiesBindHa
 	@Override
 	public BindHandler apply(BindHandler bindHandler) {
 
-		BindHandler handler = new AbstractBindHandler(bindHandler) {
+		return new AbstractBindHandler(bindHandler) {
 			@Override
 			public <T> Bindable<T> onStart(ConfigurationPropertyName name, Bindable<T> target, BindContext context) {
 				ConfigurationPropertyName defaultName = getDefaultName(name);
@@ -60,14 +60,13 @@ public class DefaultsBindHandlerAdvisor implements ConfigurationPropertiesBindHa
 				return bindHandler.onStart(name, target, context);
 			}
 		};
-		return handler;
 	}
 
 	private ConfigurationPropertyName getDefaultName(ConfigurationPropertyName name) {
 		for (Map.Entry<ConfigurationPropertyName, ConfigurationPropertyName> mapping : this.mappings.entrySet()) {
 			ConfigurationPropertyName from = mapping.getKey();
 			ConfigurationPropertyName to = mapping.getValue();
-			if ((from.isAncestorOf(name) && name.getNumberOfElements() > from.getNumberOfElements())) {
+			if (from.isAncestorOf(name) && name.getNumberOfElements() > from.getNumberOfElements()) {
 				ConfigurationPropertyName defaultName = to;
 				for (int i = from.getNumberOfElements() + 1; i < name.getNumberOfElements(); i++) {
 					defaultName = defaultName.append(name.getElement(i, Form.UNIFORM));

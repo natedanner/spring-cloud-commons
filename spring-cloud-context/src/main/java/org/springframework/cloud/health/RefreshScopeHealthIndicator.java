@@ -34,9 +34,9 @@ import org.springframework.cloud.context.scope.refresh.RefreshScope;
  */
 public class RefreshScopeHealthIndicator extends AbstractHealthIndicator {
 
-	private ObjectProvider<RefreshScope> scope;
+	private final ObjectProvider<RefreshScope> scope;
 
-	private ConfigurationPropertiesRebinder rebinder;
+	private final ConfigurationPropertiesRebinder rebinder;
 
 	public RefreshScopeHealthIndicator(ObjectProvider<RefreshScope> scope, ConfigurationPropertiesRebinder rebinder) {
 		this.scope = scope;
